@@ -1,0 +1,144 @@
+﻿@page "/dragonList"
+@using static Client.Pages.FetchData
+@inject HttpClient Http
+@using static Client.Pages.MonsterList
+@using static SharedLibrary.Dto.DragonsInfo;
+
+    <style>
+        body {
+            background-image: url('images/img4.png');        
+            background-size: 100% auto; 
+            background-position: top center;
+            background-attachment: fixed; 
+            min-height: 100vh; 
+        }
+
+        .feedback-labels {
+            display: flex;
+            justify-content: flex-end; /* spinge tutto a destra */
+            gap: 12px; /* distanza tra select e bottone */
+            margin-top: 20px;
+            margin-right: 20px; /* piccolo padding dal bordo destro */
+        }
+
+            .feedback-labels select {
+                width: 180px; /* larghezza corta */
+                padding: 5px 8px;
+            }
+
+            .feedback-labels button {
+                height: 38px; /* stessa altezza dei select */
+            }
+
+
+        .title {
+            text-align: center;
+            color: gold;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 3rem; /* circa 48px */
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            margin: 2rem 0;
+        }
+    </style>
+
+      <p class="title">Creater Mod's & Feedbacks</p>
+
+ @* @if (ApplicationManager.IsLoggedIn())
+ { *@
+
+        <p style="text-align: center; color: white;">
+            Create a new Mod Monster and give me a feedback about my mods!
+        </p>
+
+
+        @* Monster Label *@
+
+        <td>
+            <select @bind="Dragon.Name" @attributes="InputAttributes" class="form-control">
+                <option value="">Name</option>
+                @foreach (var name in Names)
+                {
+                    <option value="@name">@name</option>
+                }
+            </select>
+
+        </td>
+        <td>
+            <select @bind="Dragon.Element" @attributes="InputAttributes" class="form-control">
+                <option value="">Element</option>
+                @foreach (var element in Elements)
+                {
+                    <option value="@element">@element</option>
+                }
+            </select>
+        </td>
+        <td>
+            <select @bind="Dragon.Class" @attributes="InputAttributes" class="form-control">
+                <option value="">Class</option>
+                @foreach (var classo in Class)
+                {
+                    <option value="@classo">@classo</option>
+                }
+            </select>
+        </td>
+        <td>
+            <input type="number" @bind-value="Dragon.Defence" @attributes="InputAttributes" placeholder="Defence" class="form-control" min="-200" max="1000" />
+        </td>
+        <td>
+            <select @bind="Dragon.Map" @attributes="InputAttributes" class="form-control">
+                <option value="">Map</option>
+                @foreach (var map in Map)
+                {
+                    <option value="@map">@map</option>
+                }
+            </select>
+        </td>
+
+        <button input type="button" class="btn btn-success" @onclick="Saves">Save</button>
+
+        <p style="color: white;"><b>@messageTextMonsterChoise</b></p>
+
+
+        @* Clasification Label *@
+
+    <div class="feedback-labels">
+
+        <select @bind="Clasification.Monster" @attributes="InputAttributes" class="form-control">
+            <option value="">Monster Choise</option>
+            @foreach (var monster in Moded)
+            {
+                <option value="@monster">@monster</option>
+            }
+        </select>
+
+        <select @bind="Clasification.Feedback" @attributes="InputAttributes" class="form-control">
+            <option value="">Feedback</option>
+            @foreach (var feedback in Feedbacks)
+            {
+                <option value="@feedback">@feedback</option>
+            }
+        </select>
+
+        <button class="btn btn-success" @onclick="Saved">Confirm Save</button>
+
+    </div>
+
+    <p style="color: white;"><b>@messageTextFeedbacks</b></p>
+
+
+
+
+  @*   }
+    else
+    {
+        <p style="color: white;">
+          You need to Login...
+        </p>
+        <NavLink class="btn btn-secondary" href="existingHunter?Param2=Blazzing&Param2=Blazor">
+            <span class="oi oi-list-rich" aria-hidden="true" style="background-color:greenyellow"></span> Login
+        </NavLink>
+    } *@
+
