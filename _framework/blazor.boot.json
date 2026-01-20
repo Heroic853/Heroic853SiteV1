@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Client",
   "resources": {
-    "hash": "sha256-AG1ayaHLeCkKJe0nVnNdSyhYlKUKjS48aD7ba6wTpzI=",
+    "hash": "sha256-UL4e0kkr2f/WWlamVa3U7KDPuHDa4oAxvheNn8CVOGc=",
     "fingerprinting": {
       "Client.0up5zwzxm2.wasm": "Client.wasm",
       "Microsoft.AspNetCore.Authorization.emi29mth4g.wasm": "Microsoft.AspNetCore.Authorization.wasm",
@@ -37,7 +37,7 @@
       "Microsoft.Win32.Registry.tyhjour9kq.wasm": "Microsoft.Win32.Registry.wasm",
       "mscorlib.ijjuvl21w4.wasm": "mscorlib.wasm",
       "netstandard.jgp13znru0.wasm": "netstandard.wasm",
-      "SharedLibrary.7lcl0obk2x.wasm": "SharedLibrary.wasm",
+      "SharedLibrary.1fyf5zcwlb.wasm": "SharedLibrary.wasm",
       "System.AppContext.s1m5cqdrdd.wasm": "System.AppContext.wasm",
       "System.Buffers.1j417u4kuo.wasm": "System.Buffers.wasm",
       "System.Collections.Concurrent.fdb0od910y.wasm": "System.Collections.Concurrent.wasm",
@@ -261,7 +261,7 @@
       "Microsoft.Win32.Registry.tyhjour9kq.wasm": "sha256-tSFnBHIvQUoLdm/N+r4ILHdVyiL/OReONp3LeoEuOPI=",
       "mscorlib.ijjuvl21w4.wasm": "sha256-ku4DyQX7IfTdwPwDlrz9odvCs4mrgsJl0fNaqY56KOI=",
       "netstandard.jgp13znru0.wasm": "sha256-I7arRnyxWh5PItslQKjzLIG7EpohJACm7p/7K8eD0YA=",
-      "SharedLibrary.7lcl0obk2x.wasm": "sha256-+0JndkQFT2tf8qRV50q5hYqjevO6atiOmttxIfDigPA=",
+      "SharedLibrary.1fyf5zcwlb.wasm": "sha256-A1PyDmqLbt7mS0tKzMqz5/aiFr83W2SEPvV102sn8x4=",
       "System.AppContext.s1m5cqdrdd.wasm": "sha256-ID2O84s1i37WyD3VGwC+wZ0hgSa+12L3WJ9sbdqi+7c=",
       "System.Buffers.1j417u4kuo.wasm": "sha256-01Ols37CVTSZSP6EgL6ibEF0+JMZ/TU2TjfLVtXR1As=",
       "System.Collections.Concurrent.fdb0od910y.wasm": "sha256-bYpAUsem9UO/bAFOz5KNsCnbnw3NPeYkPi8lAl3L+Zc=",
