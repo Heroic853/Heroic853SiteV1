@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "Client",
   "resources": {
-    "hash": "sha256-6KMDigahQgg4ervqHs3lDVBobfl7D7mv9CeoX8fFxfM=",
+    "hash": "sha256-AG1ayaHLeCkKJe0nVnNdSyhYlKUKjS48aD7ba6wTpzI=",
     "fingerprinting": {
-      "Client.6fv44cjtt7.wasm": "Client.wasm",
+      "Client.0up5zwzxm2.wasm": "Client.wasm",
       "Microsoft.AspNetCore.Authorization.emi29mth4g.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.Forms.nxrb1bfsv5.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
       "Microsoft.AspNetCore.Components.95e8ons9fq.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -227,7 +227,7 @@
       "System.Runtime.InteropServices.JavaScript.u9tzo6t7zm.wasm": "sha256-8v7jVijrzRlaTmvdds4+ZNyPL5DYfnYnzFYT2HtkqwM="
     },
     "assembly": {
-      "Client.6fv44cjtt7.wasm": "sha256-7uPBhOwfnhD58H82WCUwVK8uiR/zV5BpFUUrGad72e8=",
+      "Client.0up5zwzxm2.wasm": "sha256-+PrCIcU1L5OSkOILyvF54DUZiuqRGaVOx+EHNlnHaQs=",
       "Microsoft.AspNetCore.Authorization.emi29mth4g.wasm": "sha256-xpsdU9uDJz5t2/e+ZH5CkB8nfZeCmSo9PqwquQX4B2U=",
       "Microsoft.AspNetCore.Components.Forms.nxrb1bfsv5.wasm": "sha256-K/+6c3zlmAc3Y2qud/ksu/AexTbQpjbOhmTw03Ttg7E=",
       "Microsoft.AspNetCore.Components.95e8ons9fq.wasm": "sha256-nc2eKpiHgoIWc7x02n6EHkjr80k+xa9snzM8JjsJG4U=",
