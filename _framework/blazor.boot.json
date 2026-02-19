@@ -222,7 +222,7 @@
   "cacheBootResources": true,
   "debugLevel": 0,
   "appsettings": [
-    "../appsettings.json"
+    "appsettings.json"
   ],
   "globalizationMode": "sharded",
   "extensions": {
