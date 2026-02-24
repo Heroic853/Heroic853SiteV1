@@ -35,18 +35,12 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
-    <script src="_framework/blazor.webassembly.js"></script>
 <script>
     window.forceLogout = function() {
-        // Cancella cookies Auth0
-        document.cookie.split(";").forEach(function(c) {
-            document.cookie = c.replace(/^ +/, "")
-                .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/;domain=.auth0.com");
-        });
-        // Vai al logout Auth0
         window.location.href = 'https://dev-fye25mtdiciuqtin.us.auth0.com/v2/logout?client_id=IGtzqEqmUYri7hI0NsJQ2NvWvtkmbqb3&returnTo=https://heroic853.github.io/Heroic853SiteV1&federated';
     }
 </script>
+    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>
