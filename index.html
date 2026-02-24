@@ -37,5 +37,12 @@
     </div>
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
+<script>
+    window.forceLogout = function() {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = "https://dev-fye25mtdiciuqtin.us.auth0.com/v2/logout?client_id=IGtzqEqmUYri7hI0NsJQ2NvWvtkmbqb3&returnTo=https://heroic853.github.io/Heroic853SiteV1";
+    }
+</script>
 </body>
 </html>
