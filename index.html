@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Client</title>
+    <title>Heroic Site</title>
     <base href="/Heroic853SiteV1/" />
+
+    <!-- Preload risorse critiche Blazor -->
+    <link rel="preload" href="_framework/blazor.webassembly.js" as="script" />
+    <link rel="preconnect" href="https://apiprojectheroicsite.onrender.com" crossorigin />
+    <link rel="dns-prefetch" href="https://apiprojectheroicsite.onrender.com" />
+    <link rel="preconnect" href="https://dev-fye25mtdiciuqtin.us.auth0.com" crossorigin />
+    <link rel="dns-prefetch" href="https://dev-fye25mtdiciuqtin.us.auth0.com" />
+
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="favicon.png" />
     <link href="Client.styles.css" rel="stylesheet" />
-    
+
     <script type="text/javascript">
+        // Fix routing SPA su GitHub Pages
         (function(l) {
             if (l.search[1] === '/' ) {
                 var decoded = l.search.slice(1).split('&').map(function(s) { 
@@ -20,24 +29,63 @@
                     l.pathname.slice(0, -1) + decoded + l.hash
                 );
             }
-        }(window.location))
+        }(window.location));
+
+        // Warm-up backend Render SUBITO (evita cold start da 15s+)
+        fetch('https://apiprojectheroicsite.onrender.com/health', { method: 'GET' })
+            .catch(function() {});
     </script>
 </head>
-
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <!-- Loading screen migliorata -->
+        <div style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #0f172a;
+            font-family: 'Segoe UI', sans-serif;
+            gap: 20px;
+        ">
+            <img src="favicon.png" width="72" height="72" 
+                 style="border-radius:16px; box-shadow: 0 0 30px rgba(99,102,241,0.4);" 
+                 alt="Logo" />
+            
+            <div style="color:#e2e8f0; font-size:1.1rem; font-weight:500; letter-spacing:0.5px;">
+                Heroic Site
+            </div>
+
+            <!-- Barra di progresso animata -->
+            <div style="width:220px; height:4px; background:#1e293b; border-radius:99px; overflow:hidden;">
+                <div style="
+                    height:100%;
+                    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+                    border-radius:99px;
+                    animation: shimmer 1.4s ease-in-out infinite alternate;
+                    width: 40%;
+                "></div>
+            </div>
+
+            <div style="color:#64748b; font-size:0.8rem;">
+                Caricamento in corso...
+            </div>
+        </div>
     </div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
+    <div id="blazor-error-ui" style="display:none;">
+        Si è verificato un errore.
+        <a href="" class="reload">Ricarica</a>
         <a class="dismiss">🗙</a>
     </div>
+
+    <style>
+        @keyframes shimmer {
+            0%   { width: 15%; margin-left: 0; }
+            100% { width: 55%; margin-left: 30%; }
+        }
+    </style>
 
     <script>
         window.forceLogout = function() {
@@ -46,10 +94,25 @@
     </script>
 
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
-    
     <script src="_framework/blazor.webassembly.js"></script>
 
-    <script src="_content/Blazor-ApexCharts/js/apexcharts.js"></script>
-    <script src="_content/Blazor-ApexCharts/js/blazor-apexcharts.js"></script>
+    <!-- ApexCharts caricato DOPO Blazor e solo se serve -->
+    <script>
+        // Carica ApexCharts in modo lazy, solo quando Blazor è pronto
+        window.loadApexCharts = function() {
+            return new Promise(function(resolve) {
+                if (window.ApexCharts) { resolve(); return; }
+                var s1 = document.createElement('script');
+                s1.src = '_content/Blazor-ApexCharts/js/apexcharts.js';
+                s1.onload = function() {
+                    var s2 = document.createElement('script');
+                    s2.src = '_content/Blazor-ApexCharts/js/blazor-apexcharts.js';
+                    s2.onload = resolve;
+                    document.body.appendChild(s2);
+                };
+                document.body.appendChild(s1);
+            });
+        };
+    </script>
 </body>
 </html>
