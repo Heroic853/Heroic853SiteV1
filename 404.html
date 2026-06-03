@@ -1,23 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
     <meta charset="utf-8" />
-    <title>Loading...</title>
-    <script type="text/javascript">
-        // Single Page Apps for GitHub Pages
-        var pathSegmentsToKeep = 1; 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Heroic Site</title>
+    <base href="/Heroic853SiteV1/" />
 
-        var l = window.location;
-        l.replace(
-            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-            l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-            l.hash
-        );
+    <link rel="preload" href="_framework/blazor.webassembly.js" as="script" />
+    <link rel="preconnect" href="https://apiprojectheroicsite.onrender.com" crossorigin />
+    <link rel="dns-prefetch" href="https://apiprojectheroicsite.onrender.com" />
+    <link rel="preconnect" href="https://dev-fye25mtdiciuqtin.us.auth0.com" crossorigin />
+    <link rel="dns-prefetch" href="https://dev-fye25mtdiciuqtin.us.auth0.com" />
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="Client.styles.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        (function(l) {
+            if (l.search[1] === '/' ) {
+                var decoded = l.search.slice(1).split('&').map(function(s) { 
+                    return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+        }(window.location));
+
+        fetch('https://apiprojectheroicsite.onrender.com/health', { method: 'GET' })
+            .catch(function() {});
     </script>
 </head>
 <body>
-    <p>Redirecting...</p>
+    <div id="app">
+        <div style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #0f172a;
+            font-family: 'Segoe UI', sans-serif;
+            gap: 20px;
+        ">
+            <img src="favicon.png" width="72" height="72" 
+                 style="border-radius:16px; box-shadow: 0 0 30px rgba(99,102,241,0.4);" 
+                 alt="Logo" />
+            <div style="color:#e2e8f0; font-size:1.1rem; font-weight:500; letter-spacing:0.5px;">
+                Heroic Site
+            </div>
+            <div style="width:220px; height:4px; background:#1e293b; border-radius:99px; overflow:hidden;">
+                <div style="
+                    height:100%;
+                    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+                    border-radius:99px;
+                    animation: shimmer 1.4s ease-in-out infinite alternate;
+                    width: 40%;
+                "></div>
+            </div>
+            <div style="color:#64748b; font-size:0.8rem;">
+                Caricamento in corso...
+            </div>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui" style="display:none;">
+        Si è verificato un errore.
+        <a href="" class="reload">Ricarica</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <style>
+        @keyframes shimmer {
+            0%   { width: 15%; margin-left: 0; }
+            100% { width: 55%; margin-left: 30%; }
+        }
+    </style>
+
+    <script>
+        window.forceLogout = function() {
+            window.location.href = 'https://dev-fye25mtdiciuqtin.us.auth0.com/v2/logout?client_id=IGtzqEqmUYri7hI0NsJQ2NvWvtkmbqb3&returnTo=https://heroic853.github.io/Heroic853SiteV1&federated';
+        }
+    </script>
+
+    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+
+    <script>
+        window.loadApexCharts = function() {
+            return new Promise(function(resolve) {
+                if (window.ApexCharts) { resolve(); return; }
+                var s1 = document.createElement('script');
+                s1.src = '_content/Blazor-ApexCharts/js/apexcharts.js';
+                s1.onload = function() {
+                    var s2 = document.createElement('script');
+                    s2.src = '_content/Blazor-ApexCharts/js/blazor-apexcharts.js';
+                    s2.onload = resolve;
+                    document.body.appendChild(s2);
+                };
+                document.body.appendChild(s1);
+            });
+        };
+    </script>
 </body>
 </html>
