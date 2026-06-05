@@ -114,5 +114,13 @@
             });
         };
     </script>
+<script>
+    window.playSound = function(src) {
+        var audio = new Audio(src);
+        audio.volume = 0.8;
+        audio.play().catch(function() {});
+    };
+</script>
+
 </body>
 </html>
