@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Client",
   "resources": {
-    "hash": "sha256-XBfowETndrHJsDiWnFKV4r+f3W1j4o6k1epnrpHux18=",
+    "hash": "sha256-neRHW3Qg1/Q/ysH8gceL18hKXhZ9hNPld+lsBNGGWQA=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-sn/g61GjVPhViOYQDkq1OMlk0eyS9r2Hi0qgU2o0HIU="
     },
@@ -14,7 +14,7 @@
     "coreAssembly": {},
     "assembly": {
       "Blazor-ApexCharts.wasm": "sha256-cYi8ESUAEh1vdu+33SuL5ic5Rshrv7P3ycGTg/+oBqc=",
-      "Client.wasm": "sha256-NpsENMNWVQjvHNSMi4hmOaIminD0RNSXbz+q/K79YFw=",
+      "Client.wasm": "sha256-t35sNvr1l0s7UCA5/FdxVbuN656LZXc6nCVuMxEmsjY=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-/vwvPOExSavn42XJeRmwR5mrm8IIBOcdOXvOaF5jsbg=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-yuVeG5hLs/kXzBnq99k2Je/x0QPrtgR4fXMf4HEv6Ig=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-zndmHW8gMcUzZ7UHwjPNhGgZIsCWOA95z96hAt/MDUc=",
