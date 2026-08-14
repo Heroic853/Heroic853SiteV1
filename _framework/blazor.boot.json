@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Client",
   "resources": {
-    "hash": "sha256-kQnO8QoDmKCFVejh6vsIZM1sew4WS1PT/0+zx/cQx0o=",
+    "hash": "sha256-mNoI0ZX6GI0M3+m0dUh2WtW22f4OZkWN+feHlhF8LR4=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-dexsp+9ih2C28zVhNnPXUbkz2QCq7lHpkyDcmaLl7NQ="
     },
@@ -14,11 +14,11 @@
     "coreAssembly": {},
     "assembly": {
       "Blazor-ApexCharts.wasm": "sha256-cYi8ESUAEh1vdu+33SuL5ic5Rshrv7P3ycGTg/+oBqc=",
-      "Client.wasm": "sha256-1AkXUweziZEE9beJifcDr7Cz9OxCT4pWml0sa59lQnM=",
-      "Microsoft.AspNetCore.Authorization.wasm": "sha256-/vwvPOExSavn42XJeRmwR5mrm8IIBOcdOXvOaF5jsbg=",
+      "Client.wasm": "sha256-BSzpNhiPde7Q/FvoQJXWtqtvfNNyWNpT9jm7aSvqGXg=",
+      "Microsoft.AspNetCore.Authorization.wasm": "sha256-fpfDDDfvE9Jwdv2E7X1YtUhpTXkhFMHGmQ4DcwEEXAM=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-yuVeG5hLs/kXzBnq99k2Je/x0QPrtgR4fXMf4HEv6Ig=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-Hc2hwCK8Jistzk6TdcRSCbF1SCthdORCDR2hwYYP3hM=",
-      "Microsoft.AspNetCore.Components.WebAssembly.Authentication.wasm": "sha256-xwn/ayMIwcCX4lgC77ELXXDS8GbVoYxV98Vsvc0bcSA=",
+      "Microsoft.AspNetCore.Components.WebAssembly.Authentication.wasm": "sha256-lrc8vuj/QnV+fjnp/85ysGVAQFtJXilo4NaQGfqJC4E=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-Z+zLrpiM0MU6QFNXyTiDA4AEXrs38VSNtBwLi00aY/k=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-fkkfjDjUtMUZU4HchHTjC1YEArwownSN5Q9zAWhul0g=",
       "Microsoft.AspNetCore.Metadata.wasm": "sha256-c7YbGEclzDnR2X2tgTJO9GsHaCL2dNsfT3WiAEd4eFA=",
@@ -37,7 +37,7 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-d7Erh2j/E2X0dAVabeqXEBoRUJ2Kqk8XOCwM8SHG0oI=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-DwdIH1ydDREMe+gT+NPaWxTUdDh/bzbriY2XoySGIo4=",
       "Microsoft.JSInterop.wasm": "sha256-VM/DT6j5IkptLcxUIWBQAtZIN922TjXJITgvy5XuCfU=",
-      "SharedLibrary.wasm": "sha256-SCtzGC7SGZhRW4ouHh+jhKW03xCpFl68VqaCAM9yBU8=",
+      "SharedLibrary.wasm": "sha256-DNuQaSgJlNdyyAXS1+6jGyNQdAw7xhY/+OVszO/fhro=",
       "System.Collections.Concurrent.wasm": "sha256-BLELgID2buPVrNdfxvMQbeJAxAMY6ezqvhho4jLtREc=",
       "System.Collections.NonGeneric.wasm": "sha256-KRs7NZLRLbvElbnyCsJYO7oohxf4z3dGQMiKrb0xWxw=",
       "System.Collections.Specialized.wasm": "sha256-YKuj0rFm50KcvQlslVyDV1I+qLcJ0Rol14xSgE8P/Jc=",
